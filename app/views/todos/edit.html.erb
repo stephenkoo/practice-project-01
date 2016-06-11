@@ -1,0 +1,7 @@
+<h1>Create a new to-do item</h1>
+
+<%= form_for @todo, url: todo_path, method: :patch do |f| %>
+	<%= f.text_field :title %>
+	<%= f.text_field :notes, size: "60x12" %>
+	<%= f.submit "Update" %>
+<% end %>
