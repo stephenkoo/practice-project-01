@@ -1,11 +1,11 @@
-// .l-container {
-// 	@include flex-grid-row(12);
-// }
+.l-container {
+	@include flex-grid-row(12);
+}
 
-// .l-container__main {
-// 	@include grid-column(8);
-// }
+.l-container__main {
+	@include grid-column(8);
+}
 
-// .l-container__sidebar {
-// 	@include grid-column(4);
-// }
+.l-container__sidebar {
+	@include grid-column(4);
+}
