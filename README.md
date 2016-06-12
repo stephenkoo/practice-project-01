@@ -1,9 +1,10 @@
-I started this project to become familiar with integrating the [Foundation front-end framework](http://foundation.zurb.com/) with Rails applications.
+I started this project to become familiar with integrating the [Foundation front-end framework](http://foundation.zurb.com/) with Rails applications, as well trying to conform to good SMACSS & BEM practices.
 
 Pardon the aesthetics of the project, this exercise is not focused on design and CSS, rather to practice utilising several front & back-end technologies together in one project.
 
 ## References
 * [Launch School's Zurb & Rails tutorial series](https://launchschool.com/blog/rails-and-foundation-part-1)
+* [Hugo Giraudel's Sass Guidelines](https://sass-guidelin.es/)
 
 ## Future plans
 To better familiarize myself with AJAX, dependent destroys, and soft deletes. In the future, I hope to implement the following features.
