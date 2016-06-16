@@ -25,11 +25,15 @@
 				</td>
 				<td>
 					<% if todo.notes? %>
-						<a href="#" data-reveal-id="todo-<%= todo.id %>-notes">View notes</a>
+						<a data-open="todo-<%= todo.id %>-notes">View notes</a>
 
-						<div id="todo-<%= todo.id %>-notes" class="reveal-modal" data-reveal>
+						<div class="reveal" id="todo-<%= todo.id %>-notes" data-reveal>
 							<%= todo.notes %>
-							<a class="close-reveal-modal">&#215;</a>
+							<div>
+								<button class="close-button" data-close aria-label="Close modal" type="button">
+								    <span aria-hidden="true">Close</span>
+								</button>
+						   </div>
 						</div>
 					<% end %>
 				</td>
