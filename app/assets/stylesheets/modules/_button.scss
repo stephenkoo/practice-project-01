@@ -1,3 +1,7 @@
 .button-new {
-	@extend .button, .large;
+	@extend .button, .success, .large;
+}
+
+.button-alter {
+	@extend .button, .tiny;
 }

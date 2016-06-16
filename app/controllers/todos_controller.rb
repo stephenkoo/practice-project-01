@@ -10,7 +10,11 @@ class TodosController < ApplicationController
 	def create
 		@todo = Todo.new(todo_params)
 		if @todo.save
-			redirect_to root_url, notice: "New to-do item created."
+			flash[:success] = "Todo was successfully created."
+			redirect_to root_url
+		else
+			flash[:alert] = 'There was a problem creating the Todo.'
+			render :new
 		end
 	end	
 
@@ -25,13 +29,18 @@ class TodosController < ApplicationController
 	def update
 		@todo = Todo.find(params[:id])
 		if @todo.update_attributes(todo_params)
-			redirect_to root_url, notice: "To-do item updated."
+			flash[:success] = "Todo was successfully updated."
+			redirect_to root_url
+		else
+			flash[:alert] = 'There was a problem updating the Todo.'
+        	render :edit
 		end
 	end
 
 	def destroy
 		@todo = Todo.find(params[:id]).delete
-		redirect_to root_url, notice: "To-do item deleted."
+		flash[:success] = "Todo was successfully deleted."
+		redirect_to root_url
 	end
 
 	private

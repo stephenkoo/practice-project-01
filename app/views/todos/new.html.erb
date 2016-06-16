@@ -1,7 +1,58 @@
 <h1>Create a new to-do item</h1>
+<dl class="tabs" data-tab data-options="deep_linking:true">
+  <dd>
+    <%= link_to 'View list', todos_path %>
+  </dd>
+  <dd class="active">
+    <%= link_to 'New todo', new_todo_path %>
+  </dd>
+</dl>
+
+<h1>New todo</h1>
+<%= link_to 'Back', todos_path %>
+
+<% if @todo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
+
+      <ul>
+      <% @todo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+<% end %>
 
 <%= form_for @todo, url: { action: "create" } do |f| %>
-	<%= f.text_field :title %>
-	<%= f.text_field :notes, size: "60x12" %>
-	<%= f.submit "Create" %>
+	<div class=".l-container">
+		<div class="small-10">
+			<div class=".l-container">
+				<div class="small-2 columns">
+					<%= f.label :title, class: "right inline" %>
+				</div>
+				<div class="small-10 columns">
+					<%= f.text_field :title %>
+				</div>
+			</div>
+		</div>
+
+		<div class="small-10">
+			<div class=".l-container">
+				<div class="small-2 columns">
+					<%= f.label :notes, class: "right inline" %>
+				</div>
+				<div class="small-10 columns">
+					<%= f.text_field :notes, size: "60x12" %>
+				</div>
+			</div>
+		</div>
+
+		<div class="small-10">
+			<div class=".l-container">
+				<div class="small-10 small-offset-2 columns">
+					<%= f.submit "Create" %>
+				</div>
+			</div>
+		</div>
+	</div>
 <% end %>

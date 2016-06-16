@@ -4,13 +4,22 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+	<title><%= content_for?(:title) ? yield(:title) : "Todo App" %></title>
 
 	<%= stylesheet_link_tag    "application" %>
 	<%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
 <body>
+	<%= render 'shared/navigation' %>
+
+	<div class="row">
+	  <% flash.each do |name, msg| %>
+	    <% if msg.is_a?(String) %>
+	      <%= content_tag :div, msg, class: "alert-box #{name} radius" %>
+	    <% end %>
+	  <% end %>
+	</div>
 
 	<div class="l-container">
 		<main class="l-container__main">
@@ -20,6 +29,7 @@
 			<h3>Sidebar Placeholder</h3>
 		</aside>
 	</div>
-
+	
+	<%= javascript_include_tag "application" %>
 </body>
 </html>
